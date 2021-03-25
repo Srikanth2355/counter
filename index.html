@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Counter</title>
+    <style>
+        .container {
+            width: 75%;
+            text-align: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body style="background-color: aqua;">
+    <div class="container">
+        <h1>Counter</h1>
+        <h1><span id="number">0</span></h1>
+        <div class="button-container">
+            <button class="btn btn-primary btn-lg decrease">Decrease</button>
+            <button class="btn btn-danger btn-lg reset">Reset</button>
+            <button class="btn btn-success btn-lg increase">Increase</button>
+
+        </div>
+    </div>
+    <script>
+        let count = 0;
+        let number = document.getElementById("number");
+        let decrease = document.querySelector(".decrease");
+        let increase = document.querySelector(".increase");
+        let reset = document.querySelector(".reset");
+
+        increase.addEventListener('click', function () {
+            count++;
+            number.textContent = count;
+        })
+
+        decrease.addEventListener('click', function () {
+            count--;
+            number.textContent = count;
+        })
+
+        reset.addEventListener('click', function () {
+            count = 0;
+            number.textContent = count;
+        })
+    </script>
+</body>
+
+</html>
